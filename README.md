@@ -4,7 +4,7 @@ Functionality to solve constant acceleration kinematic questions using SUVAT
 
 ## Tutorial
 
-In this tutorial we will see how to use `SUVAT` to solve a kinematic problem of constant acceleration. For some more information on what SUVAT is used for and the derivation of their formulas we recommend: <https://studywell.com/kinematics/suvat-equations/#:~:text=The%20SUVAT%20Equations%20describe%20motion,U%202%20%2B%202%20A%20S>.
+In this tutorial we will see how to use `suvat` to solve a kinematic problem of constant acceleration. For some more information on what SUVAT is used for and the derivation of their formulas we recommend: <https://studywell.com/kinematics/suvat-equations/#:~:text=The%20SUVAT%20Equations%20describe%20motion,U%202%20%2B%202%20A%20S>.
 
 Consider the following problem:
 
@@ -16,13 +16,13 @@ A cyclist is travelling along a straight road. She accelerates at a constant rat
 First we import the relevant library:
 
 ```python
->>> import SUVAT
+>>> import suvat
 ```
 
 As we have the initial velocity, u, final velocity, v and time, t, we can find the displacement (in this case labelled distance as we don't need to account for positive and negative values), s, by using the `find_displacement` function. As we do not have a value for acceleration we will input "None" to account for the unknown:
 
 ```python
->>> distance = SUVAT.find_displacement(u=4,v=7.5,a=None,t=40)
+>>> distance = suvat.find_displacement(u=4,v=7.5,a=None,t=40)
 ```
 
 We can then view the value of this distance, which solves part 1 of this problem:
@@ -37,7 +37,7 @@ To solve part 2, we can use the same values found in the question to find the ac
 Running the following will give us the acceleration:
 
 ```python
->>> acceleration = SUVAT.find_acceleration(s=None,u=4,v=7.5,t=40)
+>>> acceleration = suvat.find_acceleration(s=None,u=4,v=7.5,t=40)
 ```
 
 Once again we can now view the value of this acceleration, which solves part 2 of this problem:
@@ -61,32 +61,32 @@ There are 4 different situations in which we might wish to find the displacement
 1. Given the **final velocity**, v, of the obejct in metres per second, **acceleration**, a, of the object in metres per second squared and the **time**, t, of travel in seconds, we can compute the displacement, s, in metres by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_displacement(u=None, v=7.5, a=10, t=6)
+>>> import suvat
+>>> suvat.find_displacement(u=None, v=7.5, a=10, t=6)
 -135.0
 ```
 
 2. Given the **initial velocity**, u, of the object in metres per second, **acceleration**, a, of the object in metres per second squared and the **time**, t, of travel in seconds, we can compute the displacement, s, in metres by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_displacement(u=4, v=None, a=10, t=6)
+>>> import suvat
+>>> suvat.find_displacement(u=4, v=None, a=10, t=6)
 204.0
 ```
 
 3. Given the **initial velocity**, u, of the object in metres per second, **final velocity**, v, of the object in metres per second and the **time**, t, of travel in seconds, we can compute the displacement, s, in metres by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_displacement(u=4, v=7.5, a=None, t=6)
+>>> import suvat
+>>> suvat.find_displacement(u=4, v=7.5, a=None, t=6)
 34.5
 ```
 
 4. Given the **initial velocity**, u, of the object in metres per second, **final velocity**, v, of the object in metres per second and the **acceleration**, a, of the object in metres per second squared, we can compute the displacement, s, in metres by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_displacement(u=4, v=7.5, a=10, t=None)
+>>> import suvat
+>>> suvat.find_displacement(u=4, v=7.5, a=10, t=None)
 2.0125
 ```
 
@@ -96,32 +96,32 @@ There are 4 different situations in which we might wish to find the initial velo
 1. Given the **final velocity**, v, of the obejct in metres per second, **acceleration**, a, of the object in metres per second squared and the **time**, t, of travel in seconds, we can compute the initial velocity, u, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_initial_velocity(s=None, v=7.5, a=10, t=6)
+>>> import suvat
+>>> suvat.find_initial_velocity(s=None, v=7.5, a=10, t=6)
 -52.5
 ```
 
 2. Given the **displacement**, s, travelled in metres, **acceleration**, a, of the object in metres per second squared and the **time**, t, of travel in seconds, we can compute the initial velocity, u, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_initial_velocity(s=204, v=None, a=10, t=6)
+>>> import suvat
+>>> suvat.find_initial_velocity(s=204, v=None, a=10, t=6)
 4.0
 ```
 
 3. Given the **displacement**, s, travelled in metres, **final velocity**, v, of the object in metres per second and the **time**, t, of travel in seconds, we can compute the initial velocity, u, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_initial_velocity(s=34.5, v=7.5, a=None, t=6)
+>>> import suvat
+>>> suvat.find_initial_velocity(s=34.5, v=7.5, a=None, t=6)
 4.0
 ```
 
 4. Given the **displacement**, s, travelled in metres, **final velocity**, v, of the object in metres per second and the **acceleration**, a, of the object in metres per second squared, we can compute the initial velocity, u, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_initial_velocity(s=2.0125, v=7.5, a=10, t=None)
+>>> import suvat
+>>> suvat.find_initial_velocity(s=2.0125, v=7.5, a=10, t=None)
 4.0
 ```
 
@@ -131,32 +131,32 @@ There are 4 different situations in which we might wish to find the final veloci
 1. Given the **initial velocity**, u, of the object in metres per second, **acceleration**, a, of the object in metres per second squared and **time**, t, of travel in seconds, we can compute the final velocity, v, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_final_velocity(s=None, u=4, a=10, t=6)
+>>> import suvat
+>>> suvat.find_final_velocity(s=None, u=4, a=10, t=6)
 64.0
 ```
 
 2. Given the **displacement**, s, travelled in metres, **acceleration**, a, of the object in metres per second squared and **time**, t, of travel in seconds, we can compute the final velocity, v, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_final_velocity(s=-135, u=None, a=10, t=6)
+>>> import suvat
+>>> suvat.find_final_velocity(s=-135, u=None, a=10, t=6)
 7.5
 ```
 
 3. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second and **time**, t, of travel in seconds, we can compute the final velocity, v, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_final_velocity(s=34.5, u=4, a=None, t=6)
+>>> import suvat
+>>> suvat.find_final_velocity(s=34.5, u=4, a=None, t=6)
 7.5
 ```
 
 4. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second and **acceleration**, a, of the object in metres per second squared, we can compute the final velocity, v, in metres per second by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_final_velocity(s=2.0125, u=4, a=10, t=None)
+>>> import suvat
+>>> suvat.find_final_velocity(s=2.0125, u=4, a=10, t=None)
 7.5
 ```
 
@@ -166,32 +166,32 @@ There are 4 different situations in which we might wish to find the acceleration
 1. Given the **initial velocity**, u, of the object in metres per second, **final velocity**, v, of the object in metres per second and the **time**, t, of travel in seconds, we can compute the acceleration, a, in metres per second squared by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_acceleration(s=None, u=4, v=7.5, t=6)
+>>> import suvat
+>>> suvat.find_acceleration(s=None, u=4, v=7.5, t=6)
 0.5833333333333334
 ```
 
 2. Given the **displacement**, s, travelled in metres, **final velocity**, v, of the object in metres per second and the **time**, t, of travel in seconds, we can compute the acceleration, a, in metres per second squared by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_acceleration(s=-135, u=None, v=7.5, t=6)
+>>> import suvat
+>>> suvat.find_acceleration(s=-135, u=None, v=7.5, t=6)
 10.0
 ```
 
 3. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second and the **time**, t, of travel in seconds, we can compute the acceleration, a, in metres per second squared by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_acceleration(s=204, u=4, v=None, t=6)
+>>> import suvat
+>>> suvat.find_acceleration(s=204, u=4, v=None, t=6)
 10.0
 ```
 
 4. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second, and the **final velocity**, v, of the object in metres per second, we can compute the acceleration, a, in metres per second squared by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_acceleration(s=2.0125, u=4, v=7.5, t=None)
+>>> import suvat
+>>> suvat.find_acceleration(s=2.0125, u=4, v=7.5, t=None)
 10.0
 ```
 
@@ -201,32 +201,32 @@ There are 4 different situations in which we might wish to find the acceleration
 1. Given the **initial velocity**, u, of the object in metres per second, **final velocity**, v, of the object in metres per second and the **acceleration**, a, of the object in metres per second squared, we can compute the time, t, in seconds by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_time(s=None, u=4, v=7.5, a=10)
+>>> import suvat
+>>> suvat.find_time(s=None, u=4, v=7.5, a=10)
 0.35
 ```
 
 2. Given the **displacement**, s, travelled in metres, **final velocity**, v, of the object in metres per second and the **acceleration**, a, of the object in metres per second squared, we can compute the time, t, in seconds by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_time(s=-135, u=None, v=7.5, a=10)
+>>> import suvat
+>>> suvat.find_time(s=-135, u=None, v=7.5, a=10)
 [6.0]
 ```
 
 3. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second and the **acceleration**, a, of the object in metres per second squared, we can compute the time, t, in seconds by doing:
 
 ```python 
->>> import SUVAT
->>> SUVAT.find_time(s=204, u=4, v=None, a=10)
+>>> import suvat
+>>> suvat.find_time(s=204, u=4, v=None, a=10)
 6.0
 ```
 
 4. Given the **displacement**, s, travelled in metres, **initial velocity**, u, of the object in metres per second and the **final velocity**, v, of the object in metres per second, we can compute the time, t, in seconds by doing:
 
 ```python
->>> import SUVAT
->>> SUVAT.find_time(s=34.5, u=4, v=7.5, a=10)
+>>> import suvat
+>>> suvat.find_time(s=34.5, u=4, v=7.5, a=10)
 6.0
 ```
 
