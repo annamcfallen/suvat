@@ -244,10 +244,7 @@ def find_time(s, u, v, a):
         It uses the acceleration (in metres per second squared), a, displacement (in metres), s, and initial
         velocity (in metres per second), u, as inputted.
         """
-        root1 = (np.sqrt((2 * float(a) * float(s)) + float(u) ** 2) - float(u)) / float(a)
-        root2 = (np.sqrt((2 * float(a) * float(s)) + float(u) ** 2) + float(u)) / float(a)
-        times = [root1, root2]
-        time = [num for num in times if num >= 0]
+        time = (np.sqrt(2 * float(a) * float(s) + float(u) ** 2) - float(u)) / float(a)
         return time
     if a is None:
         """
